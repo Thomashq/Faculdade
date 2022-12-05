@@ -1,14 +1,17 @@
-const ModelStudent = require('../models/userStudent').userStudent;
-const userTeatcher = require('../models/userTeatcher');
+const database = require('../../db.js');
+
+const userStudent = require('../models/userStudent.js').userStudent;
 
 module.exports = 
 {
     async List(req, res){
         try{
-            const userStudents = await ModelStudent.findAll();
-            return res.json(userStudents);
+            const result = await userStudent.findAll();
+            return res.json(result);
         }catch(erro){
             return console.error("Erro ao listar : ", erro);
         }
     }
+
+
 }
