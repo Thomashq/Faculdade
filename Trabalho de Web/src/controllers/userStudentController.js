@@ -1,4 +1,4 @@
-const ModelStudent = require('../models/userStudent');
+const ModelStudent = require('../models/userStudent').userStudent;
 const userTeatcher = require('../models/userTeatcher');
 
 module.exports = 
@@ -8,7 +8,7 @@ module.exports =
             const userStudents = await ModelStudent.findAll();
             return res.json(userStudents);
         }catch(erro){
-            return console.error("Erro ao listar");
+            return console.error("Erro ao listar : ", erro);
         }
     }
 }
