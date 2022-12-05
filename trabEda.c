@@ -12,7 +12,6 @@ int *FillVector(int N, int *Vet) {
   srand(time(NULL));
   for (int x = 0; x < N; x++) {
     Vet[x] = rand() % 10;
-    printf("%d |", Vet[x]);
   }
   return Vet;
 }
@@ -79,7 +78,7 @@ void ExecuteInsertion(int *Vet, int n) {
   t = clock();
   InsertionSort(n, Vet);
   t = clock() - t;
-  PrintVector(Vet, n);
+  //PrintVector(Vet, n);
   printTime("InsertionSort", t);
 
     
@@ -90,7 +89,7 @@ void ExecuteHeap(int *Vet, int n) {
   t = clock();
   HeapSort(Vet, n);
   t = clock() - t;
-  PrintVector(Vet, n);
+  //PrintVector(Vet, n);
   printTime("HeapSort", t);
 }
 void executeHeapAndInsertion(int n) {
@@ -104,7 +103,7 @@ int main() {
  srand(time(NULL));
 
 	int tam=6;
-	int sizes[]={1000,10000,50000,100000,500000,1000000};
+	int sizes[]={1000,10000,50000,100000};
     int numExe=1;
 
     for(int i=0;i<tam;i++){

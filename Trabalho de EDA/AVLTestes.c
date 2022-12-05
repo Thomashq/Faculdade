@@ -183,6 +183,7 @@ void InserirAVL(int x, No **pt, bool *h)
     {
         if ((*pt)->chave == x)
         {
+            // printf("Elemento encontrado\n");
             *h = false;
             return;
         }
