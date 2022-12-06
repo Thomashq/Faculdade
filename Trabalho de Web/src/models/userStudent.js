@@ -1,44 +1,42 @@
-
-const { Sequelize } = require('sequelize')
+const Sequelize = require('sequelize')
 const database = require('../../db')
 const shema = ""
 class userStudent extends Sequelize.Model{}
 
-userStudent.init(
+module.exports = sequelize =>userStudent.init(
     {
         StudentID:
         {
-            type:Sequelize.INTERGER,
+            type:sequelize.INTERGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey:true,
         },
         NAME:
         {
-            type:Sequelize.STRING,
+            type:sequelize.STRING,
             allowNull: false,
         },
         CITY:
         {
-            type:Sequelize.STRING,
+            type:sequelize.STRING,
             allowNull: false,
         },
         EDUCATION:
         {
-            type:Sequelize.STRING,
+            type:sequelize.STRING,
             allowNull: false,   
         },
         EMAIL:
         {
-            type:Sequelize.STRING,
+            type:sequelize.STRING,
             allowNull: false,
         },
         PASSWORD:
         {
-            type:Sequelize.STRING,
+            type:sequelize.STRING,
             allowNull: false,
         },
         sequelize:database, modelName: 'userStudent', shema
     }
 )
-module.exports = userStudent;
