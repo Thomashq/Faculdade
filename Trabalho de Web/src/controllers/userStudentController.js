@@ -1,6 +1,6 @@
 const database = require('../../db.js');
 
-const userStudent = require('../models/userStudent.js').userStudent;
+const userStudent = require('../models/userStudent.js');
 
 module.exports = 
 {
